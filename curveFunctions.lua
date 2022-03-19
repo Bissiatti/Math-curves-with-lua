@@ -1,5 +1,5 @@
 require 'symmath' .setup()
-require 'gnuplot'
+local gnuplot = require 'gnuplot'
 
 local a,b,c,d,t,f,r,s= symmath.vars("a","b","c","d","t","f","r","s")
 
@@ -13,7 +13,7 @@ local function derivadaTex(c,var)
     return {c,dif,u,symmath.export.LaTeX(c),symmath.export.LaTeX(dif),symmath.export.LaTeX(u)}
 end
 
-local function comprimento(c,var,a,b)
+function comprimento(c,var,a,b)
 
     a = a or 0
     b = b or 0
@@ -45,6 +45,8 @@ function curvaturaR2(c,var)
     return {r,symmath.export.LaTeX(r)}
 
 end
+
+-- Exemplos
 
 -- local a1 = symmath.Array(a+b*t,c+d*t)
 
